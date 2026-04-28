@@ -1,0 +1,36 @@
+# Data — never commit these
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.tif
+*.tiff
+*.adf
+*.csv
+*.json
+*.geojson
+
+# Exceptions — files you DO want
+!parcel_join_strategy.csv
+!deep_learning/models/loss_curves.json
+
+# Model weights — too large
+*.pth
+*.dlpk
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# SLURM logs
+*.out
+
+# OS
+.DS_Store
+
+# Old stuff
+OLD_STUFF/

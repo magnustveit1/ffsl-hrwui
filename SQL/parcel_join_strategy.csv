@@ -1,0 +1,30 @@
+county,osa_rows,method,match_count,match_pct,ugrc_example,osa_example,notes,category
+Beaver,11070,strip_leading_zero -> parcel_id_clean,188,94.0,0101160001,300830018,"['101160001', '101160002']",Strong join
+Box_Elder,0,NO OSA DATA,0,0.0,,,,No OSA data
+Cache,71673,digits_only_strip -> serial_id_clean,35,17.5,10-041-0005,1-128-0021,"['5103', '3183']",No join found
+Carbon,23003,strip_leading_zero -> parcel_id_clean,200,100.0,01-0917-0001,2A-0051-0043,"['1-0917-0001', '1-1000-0000']",Strong join
+Daggett,0,NO OSA DATA,0,0.0,,,,No OSA data
+Davis,175054,strip_leading_zero -> parcel_id_clean,200,100.0,010420001,40080113,"['10420001', '10840020']",Strong join
+Duchesne,46429,strip_leading_zero -> parcel_id_clean,198,99.0,00-0000-2349,-0000-3800,"['-0000-2349', '-0030-9934']",Strong join
+Emery,0,NO OSA DATA,0,0.0,,,,No OSA data
+Garfield,11268,strip_leading_zero -> parcel_id_clean,134,67.0,16-0081-1270,20-0035-0006,"['16-0081-1270', '16-0081-1275']",Partial join
+Grand,12135,strip_leading_zero -> parcel_id_clean,196,98.0,01-0MSR-COMMON,1-0B11-0012,"['2-0007-0073', '1-0006-0020']",Strong join
+Iron,0,NO OSA DATA,0,0.0,,,,No OSA data
+Juab,10748,original -> parcel_id_clean,167,83.5,XB00-1792-BA1121,XA00-2454-326,"['XB00-1792-BA1121', 'XD00-4087-']",Strong join
+Kane,24510,original -> parcel_id_clean,199,99.5,3-6-21-13,6-217,"['3-6-21-13', '3-6-21-8']",Strong join
+Millard,28012,original -> parcel_id_clean,198,99.0,R-1775-G,7433-A-1,"['R-1775-G', 'R-1775-G-1']",Strong join
+Morgan,13907,strip_leading_zero -> serial_id_clean,200,100.0,00-0061-6951,4-REDROCK1-0016,"['-0061-6951', '-0061-7116']",Strong join
+Piute,4775,strip_leading_zero -> serial_id_clean,200,100.0,04-0005-0420,M-178-161,"['4-0005-0420', '3-0005-0839']",Strong join
+Rich,15285,strip_leading_zero -> parcel_id_clean,200,100.0,05-05-000-0001,28-29-280-0038,"['5-05-000-0001', '5-04-000-0001']",Strong join
+Salt_Lake,391516,strip_leading_zero -> parcel_id_clean,190,95.0,08223530200000,20233270120000,"['8223530200000', '8223540020000']",Strong join
+San_Juan,43347,NO JOIN FOUND,0,0.0,000900010020,22522X2,[],No join found
+Sanpete,43347,original -> parcel_id_clean,200,100.0,35256,22522X2,"['35256', '35257']",Strong join
+Sevier,31687,original -> parcel_id_clean,200,100.0,4-108-6,1-M4-49,"['4-108-6', '4-108-7']",Strong join
+Summit,43667,original -> parcel_id_clean,200,100.0,SH-303,PP-120-1-A,"['SH-303', 'WA-20-11']",Strong join
+Tooele,43872,remove_dashes -> parcel_id_clean,200,100.0,12-105-0-0423,4097F0002,"['1210500423', '1210500422']",Strong join
+Uintah,20393,strip_leading_zero -> parcel_id_clean,173,86.5,050830100,50860078,"['40160039', '170010013']",Strong join
+Utah,324607,original -> parcel_id_clean,100,50.0,700020306,450950012,"['700020306', '700020307']",Partial join
+Wasatch,0,NO OSA DATA,0,0.0,,,,No OSA data
+Washington,113040,original -> parcel_id_clean,200,100.0,SG-BLH-12-56,W-RGS-1-204,"['SG-BLH-12-56', 'SG-BLH-12-57']",Strong join
+Wayne,7376,strip_leading_zero -> parcel_id_clean,200,100.0,01-0085-0565,1-0047-0306,"['1-0085-0565', '2-0024-0757']",Strong join
+Weber,199043,strip_leading_zero -> parcel_id_clean,179,89.5,086690056,62150012,"['86690056', '51220026']",Strong join
