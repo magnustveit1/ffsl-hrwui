@@ -60,7 +60,7 @@ Place the following in `data/predictions/`:
 | Figure 4 | TP and FP detections by confidence score (line chart) |
 | Figure 5 | Detection outcome legend (2D color grid) |
 
-All figures are saved to `data/outputs/` at 300–600 DPI.
+All figures are saved to `data/outputs/` at 300-600 DPI.
 
 ---
 
@@ -77,11 +77,11 @@ All figures are saved to `data/outputs/` at 300–600 DPI.
 | F1 Score | 0.517 |
 | Optimal threshold (best F1) | 0.90 |
 
-High recall is the appropriate outcome for HB48 fee administration — missing a real structure is more costly than reviewing a false detection.
+High recall is the appropriate outcome for HB48 fee administration - missing a real structure is more costly than reviewing a false detection.
 
 ---
 
 ## Future Work
 
-- Update notebook to clip predictions to SES 7/8 boundary internally (rather than using pre-clipped file) — requires adding SES 7/8 boundary without buffer as an input
+- Update notebook to clip predictions to SES 7/8 boundary internally (rather than using pre-clipped file) - requires adding SES 7/8 boundary without buffer as an input
 - Extend validation to additional counties as inference completes
