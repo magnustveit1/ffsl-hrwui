@@ -21,18 +21,18 @@ Links HRWUI structure polygons to UGRC parcel boundaries via spatial join, then 
 | Table | Source | Notes |
 |---|---|---|
 | `build_poly_w_vals` | FFSL/OMF statewide structures | Loaded via QGIS DB Manager |
-| `[county]_parcels` | UGRC county parcel download | One per county — see instructions below |
+| `[county]_parcels` | UGRC county parcel download | One per county - see instructions below |
 | `osa_raw` | Utah OSA 2025 CSV (1.6M rows) | Loaded via PGAdmin Import/Export |
 
 ---
 
 ## Running for a New County
 
-### Step 1 — Download county parcels from UGRC
+### Step 1 - Download county parcels from UGRC
 Go to: https://gis.utah.gov/products/sgid/cadastre/parcels/  
 Download the shapefile for your target county.
 
-### Step 2 — Load into PostGIS via QGIS DB Manager
+### Step 2 - Load into PostGIS via QGIS DB Manager
 1. Open QGIS and add the county parcels shapefile as a layer
 2. Open **Database → DB Manager**
 3. Connect to `sdb_u0972368`
@@ -41,13 +41,13 @@ Download the shapefile for your target county.
 6. Check **Create spatial index** and **Convert field names to lowercase**
 7. Click OK
 
-### Step 3 — Update the SQL script
+### Step 3 - Update the SQL script
 Open `ffsl_parcel_join.sql` and update the four lines marked `← UPDATE`:
 - Table names (`weber_parcels` → your county table)
 - County name in OSA filter (`'Weber County'` → your county)
 - Parcel ID cleaning rule (see `parcel_join_strategy.csv`)
 
-### Step 4 — Run in PGAdmin
+### Step 4 - Run in PGAdmin
 Open `ffsl_parcel_join.sql` in the PGAdmin query tool and run each step in order.
 
 ---

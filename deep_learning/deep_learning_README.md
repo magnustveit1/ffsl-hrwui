@@ -1,6 +1,6 @@
 # Deep Learning Pipeline
 
-This folder contains the full MaskRCNN pipeline for automated building footprint extraction across Utah's High-Risk Wildland–Urban Interface (HRWUI).
+This folder contains the full MaskRCNN pipeline for automated building footprint extraction across Utah's High-Risk Wildland Urban Interface (HRWUI).
 
 ---
 
@@ -38,15 +38,15 @@ Place the following in `data/` before running:
 ### Inputs (required for inference)
 | File | Location | Description |
 |---|---|---|
-| `Counties/Counties.shp` | `OLD_STUFF/Data/` | Utah county boundaries |
-| `Extent_57M/extent_57m` | `OLD_STUFF/Data/` | Binary raster mask at 57m cell size |
-| `SES7_8_400MBuff_Dissolve.shp` | `OLD_STUFF/Data/` | HRWUI study boundary with 400m buffer |
+| `Counties/Counties.shp` | `data/inputs` | Utah county boundaries |
+| `Extent_57M/extent_57m` | `data/inputs` | Binary raster mask at 57m cell size |
+| `SES7_8_400MBuff_Dissolve.shp` | `data/inputs` | HRWUI study boundary with 400m buffer |
 | `best_model.pth` | `deep_learning/models/` | Fine-tuned model weights (Google Drive) |
 
 ### Imagery
 Inference requires either:
-- **WMTS** — a valid UGRC Discover key (set `IMAGERY_SOURCE = 'wmts'` in `infer.py`)
-- **Local GeoTIFFs** — downloaded imagery directory (set `IMAGERY_SOURCE = 'local'` and `LOCAL_IMAGERY_DIR` in `infer.py`)
+- **WMTS** - a valid UGRC Discover key (set `IMAGERY_SOURCE = 'wmts'` in `infer.py`)
+- **Local GeoTIFFs** - downloaded imagery directory (set `IMAGERY_SOURCE = 'local'` and `LOCAL_IMAGERY_DIR` in `infer.py`)
 
 > **Note:** The original UGRC WMTS key was suspended after generating high server load during statewide inference. The recommended path forward is to download study area imagery (~17 TB) locally from UGRC and set `IMAGERY_SOURCE = 'local'`.
 
@@ -87,7 +87,7 @@ tail -f deep_learning/logs/infer_JOBID.out
 
 | Parameter | Value |
 |---|---|
-| Architecture | MaskRCNN — ResNet50 FPN backbone |
+| Architecture | MaskRCNN - ResNet50 FPN backbone |
 | Base weights | ESRI USA Building Footprints (pretrained) |
 | Parameters | 43,922,395 |
 | Training data | 17,191 polygons → ~34,000 chips (512×512px) |
@@ -95,7 +95,7 @@ tail -f deep_learning/logs/infer_JOBID.out
 | Score threshold | 0.5 |
 | NMS IoU threshold | 0.15 |
 | Min detection area | 23.23 m² (250 sq ft) |
-| Inference hardware | CHPC RAI nodes — NVIDIA H200 GPUs |
+| Inference hardware | CHPC RAI nodes - NVIDIA H200 GPUs |
 
 Training loss history is saved in `models/loss_curves.json`.
 
@@ -112,7 +112,7 @@ Detections go through the following filters in order:
 6. Post-dissolve area filter
 7. Extent clip to HRWUI boundary
 
-Output: EPSG:4269 (NAD83) shapefile with `confidence` field (0–1).
+Output: EPSG:4269 (NAD83) shapefile with `confidence` field (0-1).
 
 ---
 
@@ -120,6 +120,5 @@ Output: EPSG:4269 (NAD83) shapefile with `confidence` field (0–1).
 
 | County | Detections | Notes |
 |---|---|---|
-| Davis | 358 | Completed — ~26 hours |
-| Weber | 2,350 | Completed — ~50 hours |
-| All others | — | Checkpoints valid, pending new imagery access |
+| Davis | 358 | Completed in ~26 hours |
+| Weber | 2,350 | Completed in ~50 hours |

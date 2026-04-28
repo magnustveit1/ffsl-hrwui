@@ -1,15 +1,14 @@
-# Identifying Structures Within the High-Risk Wildland–Urban Interface (WUI)
+# Identifying Structures Within the High-Risk Wildland Urban Interface (WUI)
 
-**Author:** Magnus Tveit, University of Utah GIS Capstone  
+**Author:** Magnus Tveit, University of Utah MSGIS Capstone  
 **Community Partner:** Tommy Thompson, Utah Division of Forestry, Fire & State Lands (FFSL)  
-**Academic Supervisor:** Phoebe McNeally, University of Utah  
-**Status:** In progress — Fall 2026 completion  
+**Academic Supervisor:** Phoebe McNeally, University of Utah   
 
 ---
 
 ## Project Overview
 
-Utah's wildfire risk is mapped using a Structural Exposure Score (SES), where scores of 7 or 8 represent the highest-risk areas — covering approximately 138,000 km², or roughly 63% of Utah's land area. The **High-Risk Wildland–Urban Interface (HRWUI)** is a subset of this zone, defined as areas where two or more structures exist within 250 meters of each other within the SES 7/8 boundary.
+Utah's wildfire risk is mapped using a Structural Exposure Score (SES), where scores of 7 or 8 represent the highest-risk areas — covering approximately 138,000 km², or roughly 63% of Utah's land area. The **High-Risk Wildland Urban Interface (HRWUI)** is a subset of this zone, defined as areas where two or more structures exist within 250 meters of each other within the SES 7/8 boundary.
 
 Under **HB48**, the Utah Division of Forestry, Fire & State Lands (FFSL) is responsible for identifying all structures that meet this criteria and maintaining a complete, accurate inventory of qualifying buildings. This dataset did not previously exist in verified form.
 
@@ -27,26 +26,27 @@ ffsl-hrwui/
 ├── README.md                          ← this file
 │
 ├── data/
-│   ├── inputs/                        ← validation input shapefiles (CHPC only)
+│   ├── inputs/                        ← validation input shapefiles
 │   ├── predictions/                   ← completed DL inference outputs
-│   │   ├── predictions_Davis/         ← 358 detections
-│   │   └── predictions_Weber/         ← 2,350 detections
 │   └── outputs/                       ← figures and CSV outputs
 │
 ├── deep_learning/
-│   ├── ENVIRONMENT_deep_learning.md   ← CHPC environment setup
+│   ├── deep_learning_README.md
+│   ├── ENVIRONMENT_deep_learning.md   ← environment setup
 │   ├── notebooks/                     ← pipeline scripts
 │   │   ├── chip.py                    ← training chip generation
 │   │   ├── train.py                   ← MaskRCNN fine-tuning
 │   │   ├── infer.py                   ← county-by-county inference
-│   │   └── infer.slurm               ← SLURM submission script
-│   └── models/                        ← model weights (CHPC only, see below)
+│   │   └── infer.slurm                ← SLURM submission script
+│   └── models/                        ← model weights
 │
 ├── SQL/
+│   ├── SQL_README.md
 │   ├── ffsl_parcel_join.sql           ← three-way join script
 │   └── parcel_join_strategy.csv       ← county-specific parcel ID cleaning rules
 │
 └── validation/
+    ├── validation_README.md
     ├── hrwui_validation.ipynb         ← validation notebook
     └── environment.yml                ← conda environment for validation
 ```
@@ -55,7 +55,7 @@ ffsl-hrwui/
 
 ## Data
 
-All large data files live on CHPC at:
+All large data files live on the University of Utah CHPC at:
 `/uufs/chpc.utah.edu/common/home/u0972368/FFSL_HRWUI/`
 
 They are **not stored in this repository**. See each subfolder's README for what data is needed and where to obtain it.
@@ -66,11 +66,11 @@ Model weights are hosted on Google Drive. Download and place at `deep_learning/m
 
 | File | Size | Description |
 |---|---|---|
-| `best_model.pth` | 176 MB | Fine-tuned MaskRCNN weights — use for inference |
+| `best_model.pth` | 176 MB | Fine-tuned MaskRCNN weights - use for inference |
 | `usa_building_footprints.pth` | 176 MB | ESRI base model weights |
 | `usa_building_footprints.dlpk` | 165 MB | ESRI base model package |
 
-> Google Drive link: *(add link here)*
+> Google Drive link: (https://drive.google.com/drive/folders/1oHUUzfBstTIaE6exV0mRdQSz-aAzCwMh?usp=drive_link)
 
 ---
 
@@ -102,7 +102,7 @@ See `validation/README.md` for instructions on running the validation notebook.
 | F1 Score | 0.517 |
 | Detections outside existing HRWUI | 468 |
 
-High recall is the right outcome for this use case — missing a real structure is more costly than reviewing a false detection under HB48 fee administration.
+High recall is the right outcome for this use case - missing a real structure is more costly than reviewing a false detection under HB48 fee administration.
 
 ---
 
